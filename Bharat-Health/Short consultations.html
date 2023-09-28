@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bharat Health - AI Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #498bb7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .input-box {
+            display: flex;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #send-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharat Health AI Consultation
+            <img src="https://md.ge/wp-content/uploads/2021/04/photo3-1-1.jpg" alt="AI Bot Image" width="300"> 
+        </h1>
+
+
+    </header>
+    <div class="container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type your question...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        sendButton.addEventListener("click", () => {
+            const userQuestion = userInput.value;
+            appendMessage("You", userQuestion);
+            // Simulate AI response (replace with actual AI integration)
+            simulateAIResponse(userQuestion);
+            userInput.value = ""; // Clear the input field
+        });
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat box
+        }
+
+        function simulateAIResponse(userQuestion) {
+            // Simulate AI response based on user's question (replace with actual AI logic)
+            let aiResponse;
+            if (userQuestion.includes("symptoms")) {
+                aiResponse = "Common symptoms of COVID-19 include fever, cough, and shortness of breath.";
+            } else if (userQuestion.includes("healthy diet")) {
+                aiResponse = "A healthy diet should include a variety of fruits, vegetables, lean proteins, and whole grains.";
+            } else {
+                aiResponse = "I'm sorry, I don't have information on that specific topic.";
+            }
+            
+            // Display AI response
+            setTimeout(() => {
+                appendMessage("AI Bot", aiResponse);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

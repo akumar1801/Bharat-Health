@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bharat Health - AI Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #c82b20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 100px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .input-box {
+            display: flex;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #send-button {
+            background-color: #1a1b1c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharat Health Short / prescription Consultation
+            <img src="https://images.medicinenet.com/images/slideshow/viral-infections-s2-overview.jpg" alt="norma symptoms" width="150">
+
+        </h1>
+    </header>
+    <div class="container">
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type your question...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        sendButton.addEventListener("click", () => {
+            const userQuestion = userInput.value;
+            appendMessage("You", userQuestion);
+            // Simulate AI response (replace with actual AI integration)
+            simulateAIResponse(userQuestion);
+            userInput.value = ""; // Clear the input field
+        });
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat box
+        }
+
+        function simulateAIResponse(userQuestion) {
+            // Simulate AI response based on user's question (replace with actual AI logic)
+            let aiResponse;
+            if (userQuestion.includes("symptoms")) {
+                aiResponse = "Common symptoms of COVID-19 include fever, cough, and shortness of breath.";
+            } else if (userQuestion.includes("healthy diet")) {
+                aiResponse = "A healthy diet should include a variety of fruits, vegetables, lean proteins, and whole grains.";
+            } else {
+                aiResponse = "I'm sorry, I don't have information on that specific topic.";
+            }
+            
+            // Display AI response
+            setTimeout(() => {
+                appendMessage("AI Bot", aiResponse);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bharat Health - Request Long Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #9ca01a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #1e2021;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharat Health - Request Long Consultation
+
+            <img src="https://lonestarcares.org/wp-content/uploads/2020/04/patient-doctor-online-consultation-JQSZSNV-1024x448.jpg" alt="DR.IMAGE " width="300">
+
+        </h1>
+    </header>
+    <div class="container">
+        <h2>Request Long Consultation</h2>
+        <form id="consultation-form">
+            <label for="AGE">Name:</AGE>
+            <input type="text" id="AGE" name="AGE" required>
+
+            <label for="SYMPTOMS">SYMPTOMS:</label>
+            <input type="text" id="SYMPTOMS" name="SYMPTOMS" required>
+
+            <label for="PAST MEDICATIONS"></label>PAST MEDICATIONS:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Request Consultation</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("consultation-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add code here to handle the form submission, like sending data to a server.
+            alert("Consultation request submitted successfully /n WE' LL GET IN TOUCH WITH YOU ASAP");
+            // You can redirect the user to a thank-you page or perform other actions as needed.
+            window.location.href = "payment page.html";
+        });
+    </script>
+</body>
+</html>

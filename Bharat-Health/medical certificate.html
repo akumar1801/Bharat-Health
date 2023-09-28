@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Certificate Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Medical Certificate Request</h1>
+    </header>
+    <div class="container">
+        <h2>Choose Certificate Type</h2>
+        <form id="certificate-form">
+            <label for="certificate-type">Select Certificate Type:</label>
+            <select id="certificate-type" name="certificate-type" required>
+                <option value="single-day">Single Day</option>
+                <option value="multi-day">Multi-Day</option>
+            </select>
+
+            <h2>Patient Details</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="symptoms">Symptoms:</label>
+            <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+
+            <label for="reason">Reason for Medical Certificate:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("certificate-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Database bnana h 
+            alert("Certificate request submitted successfully!");
+            // Thank you page 
+        });
+    </script>
+</body>
+</html>
